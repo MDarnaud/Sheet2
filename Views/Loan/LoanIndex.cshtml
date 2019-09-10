@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "LoanIndex";
+}
+
+<h2>Index</h2>
+<form action="/Loan/LoanIndex" method="post">
+    Money Invested :<br>
+    <input type="number" name="investment" min="1"><br>
+    Interest Rate (%):<br>
+    <input type="number" name="interest_rate" min="1" max="100"><br />
+    Years: <br />
+    <input type="number" name="years" min="1"><br />
+    <br />
+    <input type="submit" />
+</form>
+
+@if (ViewBag.Money != null)
+{
+<h3>You will make $@Convert.ToDecimal(ViewBag.Money).ToString("C")</h3>
+}

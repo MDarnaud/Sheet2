@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "GradesIndex";
+
+}
+<!--
+<script type="text/javascript">
+function () {
+        //Color
+        var grade = document.getElementById("result")
+        var color = "green";
+
+        switch (grade) {
+            case "C":
+                color = "yellow";
+                break;
+            case "D":
+                color = "red";
+                break;
+            case "E":
+                color = "red";
+                break;
+        }
+        grade.style.color(color);
+}
+</script>
+-->
+
+<h2>Index</h2>
+<form action="/Grades/GradesIndex" method="post">
+    Grade 1 :<br>
+    <input type="number" name="grade1" min="0" max="100"><br>
+    Grade 2 :<br>
+    <input type="number" name="grade2" min="0" max="100"><br>
+    Grade 3 :<br>
+    <input type="number" name="grade3" min="0" max="100"><br>
+    <br />
+    <input type="submit" />
+</form>
+
+@if (ViewBag.Grade != null)
+{
+    if (ViewBag.Grade == "A" || ViewBag.Grade == "B")
+    {
+        <h3 style="color:green">Your average is @ViewBag.Grade</h3>
+    }
+    else if (ViewBag.Grade == "C")
+    {
+        <h3 style="color:yellow">Your average is @ViewBag.Grade</h3>
+    }
+    else if (ViewBag.Grade == "D" || ViewBag.Grade == "E")
+    {
+        <h3 style="color:red">Your average is @ViewBag.Grade</h3>
+    }
+
+
+    //<h3>Your average is <span id="result">@ViewBag.Grade</span></h3>
+}
+
+
